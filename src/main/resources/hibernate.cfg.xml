@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD//EN"
+    "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/postgres</property>
+    <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+    <property name="hibernate.connection.username">postgres</property>
+    <property name="hibernate.connection.password">Alexandr</property>
+
+
+    <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQL82Dialect</property>
+    <property name="hibernate.show_sql">true</property>
+    <property name="format_sql">true</property>
+    <!-- DB schema will be updated if needed -->
+    <property name="hibernate.hbm2ddl.auto">validate</property>
+
+<!--    <mapping class="org.example.querying.entities.User"/>-->
+<!--    <mapping class="org.example.querying.entities.Company"/>-->
+<!--    <mapping class="org.example.querying.entities.Profile"/>-->
+<!--    <mapping class="org.example.querying.entities.Chat"/>-->
+<!--    <mapping class="org.example.querying.entities.UserChat"/>-->
+<!--    <mapping class="org.example.querying.entities.Payment"/>-->
+
+    <mapping class="org.example.querying.dictionaryEntries.EnglishWord"/>
+    <mapping class="org.example.querying.dictionaryEntries.RussianWord"/>
+    <mapping class="org.example.querying.dictionaryEntries.NumericWord"/>
+  </session-factory>
+</hibernate-configuration>
