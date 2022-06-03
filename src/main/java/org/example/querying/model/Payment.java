@@ -1,16 +1,15 @@
-package org.example.querying.entities;
+package org.example.querying.model;
 
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
-
 @Data
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
 @Entity
 public class Payment {
 
@@ -23,5 +22,5 @@ public class Payment {
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "receiver_id")
-    private User receiver;
+    private Employee receiver;
 }
