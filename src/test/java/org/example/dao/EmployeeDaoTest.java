@@ -25,7 +25,6 @@ public class EmployeeDaoTest {
 
     @BeforeAll
     public void initDb(){
-        System.out.println("hello!");
         TestDataImporter.importData(sessionFactory);
     }
 
