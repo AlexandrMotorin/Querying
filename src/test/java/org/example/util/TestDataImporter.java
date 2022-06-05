@@ -16,8 +16,11 @@ public class TestDataImporter {
 
     public void importData(SessionFactory sessionFactory){
         @Cleanup var session = sessionFactory.openSession();
+        session.beginTransaction();
+
 
         Department hr = saveDepartment(session, "HR");
+        System.out.println();
         Department design = saveDepartment(session, "Design");
         Department develop = saveDepartment(session, "Develop");
 
@@ -60,7 +63,7 @@ public class TestDataImporter {
         savePayment(session, 155, liza);
         savePayment(session, 160, liza);
 
-
+        session.getTransaction().commit();
     }
 
     private Department saveDepartment(Session session, String name){

@@ -1,9 +1,6 @@
 package org.example.querying.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import jakarta.persistence.*;
 
@@ -22,6 +19,7 @@ public class Employee {
     private EmployeeInfo employeeInfo;
 
     @ManyToOne(fetch = FetchType.LAZY)
+    @ToString.Exclude
     private Department department;
 
 }
